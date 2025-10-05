@@ -210,11 +210,6 @@ section {
   overflow-x: hidden;
 }
 
-/* Fix for potential wide elements */
-* {
-  max-width: 100%;
-}
-
 /* Specific fixes for common horizontal scroll issues */
 .overflow-x-hidden {
   overflow-x: hidden;
@@ -227,10 +222,7 @@ h1, h2, h3, h4, h5, h6, p, span, div {
   hyphens: auto;
 }
 
-/* Fix for flex containers */
-.flex {
-  flex-wrap: wrap;
-}
+/* (Removed global flex wrap override to avoid layout side-effects) */
 
 /* Mobile-specific fixes */
 @media (max-width: 768px) {
@@ -241,9 +233,7 @@ h1, h2, h3, h4, h5, h6, p, span, div {
   }
   
   /* Ensure no element exceeds viewport */
-  * {
-    max-width: 100vw;
-  }
+  /* (Removed global max-width override to avoid nested scroll issues) */
   
   /* Fix for potential wide containers */
   .container, .max-w-7xl, .max-w-6xl, .max-w-5xl {
@@ -267,17 +257,7 @@ h1, h2, h3, h4, h5, h6, p, span, div {
     text-overflow: ellipsis;
   }
   
-  /* Fix for flex containers */
-  .flex {
-    flex-wrap: wrap;
-    gap: 0.5rem;
-  }
-  
-  /* Fix for grid layouts */
-  .grid {
-    grid-template-columns: 1fr;
-    gap: 1rem;
-  }
+  /* (Removed global flex/grid overrides to keep Tailwind defaults) */
 }
 
 /* Print Styles */
