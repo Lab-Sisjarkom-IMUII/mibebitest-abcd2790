@@ -1,11 +1,25 @@
 {
   "name": "mibebi-landingpage",
-  "version": "0.1.0",
+  "version": "1.0.0",
   "private": true,
+  "description": "Landing page modern untuk aplikasi kasir digital Mibebi KasirResto",
+  "keywords": [
+    "kasir digital",
+    "restoran",
+    "landing page",
+    "nextjs",
+    "tailwindcss",
+    "mibebi"
+  ],
+  "author": "Mibebi Team",
+  "license": "MIT",
   "scripts": {
     "dev": "next dev --turbopack",
     "build": "next build --turbopack",
-    "start": "next start"
+    "start": "next start",
+    "lint": "next lint",
+    "analyze": "cross-env ANALYZE=true next build",
+    "type-check": "tsc --noEmit"
   },
   "dependencies": {
     "react": "19.1.0",
@@ -14,6 +28,24 @@
   },
   "devDependencies": {
     "@tailwindcss/postcss": "^4",
-    "tailwindcss": "^4"
+    "tailwindcss": "^4",
+    "eslint": "^8.57.0",
+    "eslint-config-next": "15.5.4"
+  },
+  "engines": {
+    "node": ">=18.0.0",
+    "npm": ">=8.0.0"
+  },
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
   }
 }

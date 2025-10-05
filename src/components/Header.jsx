@@ -1,0 +1,85 @@
+'use client';
+
+import { useState, useEffect } from 'react';
+
+export default function Header({ onCTAClick }) {
+  const [isScrolled, setIsScrolled] = useState(false);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      setIsScrolled(window.scrollY > 20);
+    };
+
+    window.addEventListener('scroll', handleScroll);
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
+
+  const scrollToSection = (sectionId) => {
+    const element = document.getElementById(sectionId);
+    if (element) {
+      element.scrollIntoView({ behavior: 'smooth' });
+    }
+  };
+
+  return (
+    <header 
+      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${
+        isScrolled 
+          ? 'bg-white/95 backdrop-blur-md shadow-lg' 
+          : 'bg-transparent'
+      }`}
+    >
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="flex items-center justify-between h-16">
+          {/* Logo */}
+          <div className="flex-shrink-0">
+            <div className="flex items-center">
+              <div className="w-8 h-8 bg-gradient-to-br from-[#2563EB] to-[#F97316] rounded-lg flex items-center justify-center">
+                <span className="text-white font-bold text-lg">M</span>
+              </div>
+              <span className="ml-2 text-xl font-bold text-[#0F172A]">
+                Mibebi
+              </span>
+            </div>
+          </div>
+
+          {/* Navigation */}
+          <nav className="hidden md:flex space-x-8">
+            <button
+              onClick={() => scrollToSection('features')}
+              className="text-[#334155] hover:text-[#2563EB] transition-colors duration-200 font-medium cursor-pointer"
+            >
+              Fitur
+            </button>
+            <button
+              onClick={() => scrollToSection('testimonials')}
+              className="text-[#334155] hover:text-[#2563EB] transition-colors duration-200 font-medium cursor-pointer"
+            >
+              Testimoni
+            </button>
+            <button
+              onClick={() => scrollToSection('contact')}
+              className="text-[#334155] hover:text-[#2563EB] transition-colors duration-200 font-medium cursor-pointer"
+            >
+              Kontak
+            </button>
+          </nav>
+
+          {/* CTA Button */}
+          <div className="flex items-center space-x-4">
+            <button
+              onClick={() => {
+                onCTAClick('header_cta');
+                scrollToSection('hero');
+              }}
+              className="bg-[#2563EB] hover:bg-[#1D4ED8] text-white px-6 py-2.5 rounded-2xl font-semibold transition-all duration-300 hover:shadow-lg hover:scale-105 group relative overflow-hidden cursor-pointer"
+            >
+              <span className="relative z-10">Coba Gratis Sekarang</span>
+              <div className="absolute inset-0 bg-gradient-to-r from-[#1D4ED8] to-[#2563EB] opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+            </button>
+          </div>
+        </div>
+      </div>
+    </header>
+  );
+}
