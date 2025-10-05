@@ -34,7 +34,7 @@ export default function HeroSection({ onCTAClick }) {
         <div className="absolute -bottom-40 -left-40 w-96 h-96 bg-gradient-to-tr from-[#A3E635]/10 to-[#2563EB]/10 rounded-full animate-pulse-slow delay-1000"></div>
       </div>
 
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 w-full overflow-x-hidden">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 w-full overflow-hidden">
         <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
           {/* Content */}
           <div className={`space-y-8 transition-all duration-1000 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}>
@@ -61,7 +61,7 @@ export default function HeroSection({ onCTAClick }) {
             <div className={`flex flex-col sm:flex-row gap-4 transition-all duration-1000 delay-600 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}>
               <button
                 onClick={() => onCTAClick('hero_primary')}
-                className="bg-[#2563EB] hover:bg-[#1D4ED8] text-white px-8 py-4 rounded-2xl font-semibold text-lg transition-all duration-300 hover:shadow-xl hover:scale-105 flex items-center justify-center group relative overflow-hidden cursor-pointer"
+                className="bg-[#2563EB] hover:bg-[#1D4ED8] text-white px-8 py-4 rounded-2xl font-semibold text-lg transition-all duration-300 hover:shadow-xl md:hover:scale-105 flex items-center justify-center group relative overflow-hidden cursor-pointer"
               >
                 <span className="relative z-10 flex items-center">
                   🔵 Coba Gratis Sekarang
@@ -70,7 +70,7 @@ export default function HeroSection({ onCTAClick }) {
               </button>
               <button
                 onClick={() => onCTAClick('hero_secondary')}
-                className="bg-[#F97316] hover:bg-[#EA580C] text-white px-8 py-4 rounded-2xl font-semibold text-lg transition-all duration-300 hover:shadow-xl hover:scale-105 flex items-center justify-center group relative overflow-hidden cursor-pointer"
+                className="bg-[#F97316] hover:bg-[#EA580C] text-white px-8 py-4 rounded-2xl font-semibold text-lg transition-all duration-300 hover:shadow-xl md:hover:scale-105 flex items-center justify-center group relative overflow-hidden cursor-pointer"
               >
                 <span className="relative z-10 flex items-center">
                   🟠 Lihat Demo
@@ -80,7 +80,7 @@ export default function HeroSection({ onCTAClick }) {
             </div>
 
             {/* Trust Indicators */}
-            <div className={`flex items-center space-x-6 pt-4 transition-all duration-1000 delay-800 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}>
+            <div className={`flex items-center flex-wrap gap-x-4 gap-y-2 pt-4 transition-all duration-1000 delay-800 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}>
               <div className="flex items-center space-x-2 group">
                 <div className="w-2 h-2 bg-[#A3E635] rounded-full animate-pulse"></div>
                 <span className="text-sm text-[#334155] group-hover:text-[#A3E635] transition-colors">Tanpa biaya bulanan</span>
@@ -98,7 +98,7 @@ export default function HeroSection({ onCTAClick }) {
 
           {/* Visual */}
           <div className={`relative transition-all duration-1000 delay-1000 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}>
-            <div className="relative bg-white rounded-3xl shadow-2xl p-8 border border-[#E2E8F0] hover:shadow-3xl transition-all duration-500 hover:scale-105">
+            <div className="relative bg-white rounded-3xl shadow-2xl p-8 border border-[#E2E8F0] md:hover:shadow-3xl transition-all duration-500 md:hover:scale-105">
               {/* Mockup Dashboard */}
               <div className="space-y-6">
                 {/* Header */}
