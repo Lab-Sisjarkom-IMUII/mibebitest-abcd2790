@@ -26,7 +26,7 @@ export default function HeroSection({ onCTAClick }) {
     <section 
       ref={heroRef}
       id="hero"
-      className="relative pt-20 pb-16 lg:pt-24 lg:pb-20 bg-gradient-to-br from-[#F8FAFC] via-white to-[#F1F5F9] overflow-hidden"
+      className="relative pt-20 pb-16 lg:pt-24 lg:pb-20 bg-gradient-to-br from-[#F8FAFC] via-white to-[#F1F5F9] overflow-hidden w-full"
     >
       {/* Animated Background Elements */}
       <div className="absolute inset-0 overflow-hidden">
@@ -34,7 +34,7 @@ export default function HeroSection({ onCTAClick }) {
         <div className="absolute -bottom-40 -left-40 w-96 h-96 bg-gradient-to-tr from-[#A3E635]/10 to-[#2563EB]/10 rounded-full animate-pulse-slow delay-1000"></div>
       </div>
 
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 w-full overflow-x-hidden">
         <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
           {/* Content */}
           <div className={`space-y-8 transition-all duration-1000 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}>
