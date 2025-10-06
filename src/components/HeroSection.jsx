@@ -59,24 +59,30 @@ export default function HeroSection({ onCTAClick }) {
 
             {/* CTA Buttons */}
             <div className={`flex flex-col sm:flex-row gap-4 transition-all duration-1000 delay-600 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}>
-              <button
+              <a
+                href="https://drive.google.com/drive/folders/1bO5obr3gN2ZIR8GijurpmIX_6-j5Kj9d?usp=sharing"
+                target="_blank"
+                rel="noopener noreferrer"
                 onClick={() => onCTAClick('hero_primary')}
                 className="bg-[#2563EB] hover:bg-[#1D4ED8] text-white px-8 py-4 rounded-2xl font-semibold text-lg transition-all duration-300 hover:shadow-xl md:hover:scale-105 flex items-center justify-center group relative overflow-hidden cursor-pointer"
               >
                 <span className="relative z-10 flex items-center">
-                  🔵 Coba Gratis Sekarang
+                  🔵 Pakai Sekarang
                 </span>
                 <div className="absolute inset-0 bg-gradient-to-r from-[#1D4ED8] to-[#2563EB] opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
-              </button>
-              <button
+              </a>
+              <a
+                href="https://wa.me/628992050001?text=Halo%2C%20saya%20ingin%20konsultasi%20tentang%20Mibebi%20KasirResto"
+                target="_blank"
+                rel="noopener noreferrer"
                 onClick={() => onCTAClick('hero_secondary')}
                 className="bg-[#F97316] hover:bg-[#EA580C] text-white px-8 py-4 rounded-2xl font-semibold text-lg transition-all duration-300 hover:shadow-xl md:hover:scale-105 flex items-center justify-center group relative overflow-hidden cursor-pointer"
               >
                 <span className="relative z-10 flex items-center">
-                  🟠 Lihat Demo
+                  🟠 Konsultasi WhatsApp
                 </span>
                 <div className="absolute inset-0 bg-gradient-to-r from-[#EA580C] to-[#F97316] opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
-              </button>
+              </a>
             </div>
 
             {/* Trust Indicators */}

@@ -120,12 +120,22 @@ export default function Advantages() {
               Bergabunglah dengan ratusan restoran yang sudah merasakan manfaat Mibebi KasirResto
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <button className="bg-[#2563EB] hover:bg-[#1D4ED8] text-white px-8 py-4 rounded-2xl font-semibold transition-all duration-200 hover:shadow-lg hover:scale-105">
+              <a
+                href="https://drive.google.com/drive/folders/1bO5obr3gN2ZIR8GijurpmIX_6-j5Kj9d?usp=sharing"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="bg-[#2563EB] hover:bg-[#1D4ED8] text-white px-8 py-4 rounded-2xl font-semibold transition-all duration-200 hover:shadow-lg hover:scale-105"
+              >
                 Mulai Sekarang - Gratis
-              </button>
-              <button className="bg-[#F97316] hover:bg-[#EA580C] text-white px-8 py-4 rounded-2xl font-semibold transition-all duration-200 hover:shadow-lg hover:scale-105">
+              </a>
+              <a
+                href="https://wa.me/628992050001?text=Halo%2C%20saya%20ingin%20konsultasi%20tentang%20Mibebi%20KasirResto"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="bg-[#F97316] hover:bg-[#EA580C] text-white px-8 py-4 rounded-2xl font-semibold transition-all duration-200 hover:shadow-lg hover:scale-105"
+              >
                 Konsultasi Gratis
-              </button>
+              </a>
             </div>
           </div>
         </div>

@@ -36,12 +36,17 @@ export default function FinalCTA({ onCTAClick, onFormSubmit }) {
     });
   };
 
-  const handleSubmit = (e) => {
+  const handleWhatsAppRedirect = (e) => {
     e.preventDefault();
     onFormSubmit('final_cta_form');
-    // Here you would typically send the form data to your backend
-    console.log('Form submitted:', formData);
-    alert('Terima kasih! Tim kami akan segera menghubungi Anda.');
+    
+    // Create WhatsApp message
+    const message = `Halo, saya ${formData.name} dari ${formData.business}. Saya tertarik dengan Mibebi KasirResto dan ingin konsultasi lebih lanjut.${formData.email ? ` Email: ${formData.email}` : ''}`;
+    const encodedMessage = encodeURIComponent(message);
+    const whatsappUrl = `https://wa.me/628992050001?text=${encodedMessage}`;
+    
+    // Redirect to WhatsApp
+    window.open(whatsappUrl, '_blank');
   };
 
   return (
@@ -56,10 +61,10 @@ export default function FinalCTA({ onCTAClick, onFormSubmit }) {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         <div className={`text-center mb-16 transition-all duration-1000 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}>
           <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold mb-6">
-            Siap Menjadikan Restoran Anda Lebih Cepat, Cerdas, dan Menguntungkan?
+            Siap Merasakan Perbedaannya?
           </h2>
           <p className="text-xl opacity-90 max-w-3xl mx-auto">
-            Gabung dengan ratusan restoran yang sudah pakai Mibebi KasirResto.
+            Bergabunglah dengan ratusan restoran yang sudah merasakan manfaat Mibebi KasirResto
           </p>
         </div>
 
@@ -109,10 +114,10 @@ export default function FinalCTA({ onCTAClick, onFormSubmit }) {
           {/* Contact Form */}
           <div className={`bg-white rounded-2xl p-8 shadow-2xl transition-all duration-1000 delay-400 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}>
             <h3 className="text-2xl font-bold text-[#0F172A] mb-6 text-center">
-              Daftar Sekarang - Gratis
+              Mulai Sekarang - Gratis
             </h3>
             
-            <form onSubmit={handleSubmit} className="space-y-6">
+            <form onSubmit={handleWhatsAppRedirect} className="space-y-6">
               <div>
                 <label className="block text-sm font-semibold text-[#0F172A] mb-2">
                   Nama Lengkap *
@@ -177,15 +182,15 @@ export default function FinalCTA({ onCTAClick, onFormSubmit }) {
                 onClick={() => onCTAClick('final_form_submit')}
                 className="w-full bg-[#2563EB] hover:bg-[#1D4ED8] text-white py-4 rounded-2xl font-semibold text-lg transition-all duration-200 hover:shadow-lg hover:scale-105"
               >
-                🔵 Coba Gratis Sekarang
+                🔵 Pakai Sekarang
               </button>
             </form>
 
             <div className="mt-6 text-center">
               <p className="text-sm text-[#334155]">
                 Atau hubungi langsung: 
-                <a href="https://wa.me/628992050007" className="text-[#2563EB] font-semibold ml-1">
-                  📞 0899-2050-007
+                <a href="https://wa.me/628992050001" className="text-[#2563EB] font-semibold ml-1">
+                  📞 0899-2050-001
                 </a>
               </p>
             </div>
@@ -195,18 +200,24 @@ export default function FinalCTA({ onCTAClick, onFormSubmit }) {
         {/* Alternative CTAs */}
         <div className="mt-16 text-center">
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <button
+            <a
+              href="https://drive.google.com/drive/folders/1bO5obr3gN2ZIR8GijurpmIX_6-j5Kj9d?usp=sharing"
+              target="_blank"
+              rel="noopener noreferrer"
               onClick={() => onCTAClick('demo_request')}
               className="bg-[#F97316] hover:bg-[#EA580C] text-white px-8 py-4 rounded-2xl font-semibold transition-all duration-200 hover:shadow-lg hover:scale-105"
             >
-              🟠 Lihat Demo
-            </button>
-            <button
+              🟠 Download Aplikasi
+            </a>
+            <a
+              href="https://wa.me/628992050001?text=Halo%2C%20saya%20ingin%20konsultasi%20tentang%20Mibebi%20KasirResto"
+              target="_blank"
+              rel="noopener noreferrer"
               onClick={() => onCTAClick('consultation_request')}
               className="bg-white/20 hover:bg-white/30 text-white px-8 py-4 rounded-2xl font-semibold transition-all duration-200 hover:shadow-lg hover:scale-105 backdrop-blur-sm"
             >
               💬 Konsultasi Gratis
-            </button>
+            </a>
           </div>
         </div>
       </div>

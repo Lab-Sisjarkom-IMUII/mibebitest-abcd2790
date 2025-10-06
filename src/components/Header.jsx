@@ -67,16 +67,16 @@ export default function Header({ onCTAClick }) {
 
           {/* CTA Button */}
           <div className="flex items-center space-x-4 flex-shrink-0">
-            <button
-              onClick={() => {
-                onCTAClick('header_cta');
-                scrollToSection('hero');
-              }}
+            <a
+              href="https://drive.google.com/drive/folders/1bO5obr3gN2ZIR8GijurpmIX_6-j5Kj9d?usp=sharing"
+              target="_blank"
+              rel="noopener noreferrer"
+              onClick={() => onCTAClick('header_cta')}
               className="bg-[#2563EB] hover:bg-[#1D4ED8] text-white px-3 sm:px-6 py-2.5 rounded-2xl font-semibold transition-all duration-300 hover:shadow-lg hover:scale-105 group relative overflow-hidden cursor-pointer text-sm sm:text-base whitespace-nowrap"
             >
-              <span className="relative z-10">Coba Gratis Sekarang</span>
+              <span className="relative z-10">Pakai Sekarang</span>
               <div className="absolute inset-0 bg-gradient-to-r from-[#1D4ED8] to-[#2563EB] opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
-            </button>
+            </a>
           </div>
         </div>
       </div>
