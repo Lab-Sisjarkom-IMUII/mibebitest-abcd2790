@@ -187,9 +187,9 @@ export default function FinalCTA({ onCTAClick, onFormSubmit }) {
             </form>
 
             <div className="mt-6 text-center">
-              <p className="text-sm text-[#334155]">
+              <p className="text-sm text-[#0F172A] font-medium">
                 Atau hubungi langsung: 
-                <a href="https://wa.me/628992050001" className="text-[#2563EB] font-semibold ml-1">
+                <a href="https://wa.me/628992050001" className="text-[#2563EB] font-bold ml-1 hover:text-[#1D4ED8] transition-colors">
                   📞 0899-2050-001
                 </a>
               </p>
