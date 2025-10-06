@@ -43,27 +43,33 @@ export default function Header({ onCTAClick }) {
             </div>
           </div>
 
-          {/* Navigation */}
-          <nav className="hidden md:flex space-x-8">
-            <button
-              onClick={() => scrollToSection('features')}
-              className="text-[#334155] hover:text-[#2563EB] transition-colors duration-200 font-medium cursor-pointer"
-            >
-              Fitur
-            </button>
-            <button
-              onClick={() => scrollToSection('testimonials')}
-              className="text-[#334155] hover:text-[#2563EB] transition-colors duration-200 font-medium cursor-pointer"
-            >
-              Testimoni
-            </button>
-            <button
-              onClick={() => scrollToSection('contact')}
-              className="text-[#334155] hover:text-[#2563EB] transition-colors duration-200 font-medium cursor-pointer"
-            >
-              Kontak
-            </button>
-          </nav>
+                {/* Navigation */}
+                <nav className="hidden md:flex space-x-8">
+                  <button
+                    onClick={() => scrollToSection('features')}
+                    className="text-[#334155] hover:text-[#2563EB] transition-colors duration-200 font-medium cursor-pointer"
+                  >
+                    Fitur
+                  </button>
+                  <button
+                    onClick={() => scrollToSection('testimonials')}
+                    className="text-[#334155] hover:text-[#2563EB] transition-colors duration-200 font-medium cursor-pointer"
+                  >
+                    Testimoni
+                  </button>
+                  <button
+                    onClick={() => scrollToSection('resources')}
+                    className="text-[#334155] hover:text-[#2563EB] transition-colors duration-200 font-medium cursor-pointer"
+                  >
+                    Resources
+                  </button>
+                  <button
+                    onClick={() => scrollToSection('contact')}
+                    className="text-[#334155] hover:text-[#2563EB] transition-colors duration-200 font-medium cursor-pointer"
+                  >
+                    Kontak
+                  </button>
+                </nav>
 
           {/* CTA Buttons */}
           <div className="flex items-center space-x-3 flex-shrink-0">

@@ -9,6 +9,7 @@ import OperationalFeatures from './OperationalFeatures';
 import RevenueModel from './RevenueModel';
 import Advantages from './Advantages';
 import Testimonials from './Testimonials';
+import Resources from './Resources';
 import FinalCTA from './FinalCTA';
 import Footer from './Footer';
 
@@ -71,9 +72,10 @@ export default function LandingPage() {
         <EngagementFeatures />
         <OperationalFeatures />
         <RevenueModel />
-        <Advantages />
-        <Testimonials />
-        <FinalCTA onCTAClick={handleCTAClick} onFormSubmit={handleFormSubmit} />
+            <Advantages />
+            <Testimonials />
+            <Resources />
+            <FinalCTA onCTAClick={handleCTAClick} onFormSubmit={handleFormSubmit} />
       </main>
       <Footer />
     </div>
