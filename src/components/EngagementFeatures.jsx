@@ -127,12 +127,22 @@ export default function EngagementFeatures() {
               Semua fitur ini sudah terintegrasi dalam satu sistem yang mudah digunakan
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <button className="bg-[#2563EB] hover:bg-[#1D4ED8] text-white px-8 py-4 rounded-2xl font-semibold transition-all duration-200 hover:shadow-lg hover:scale-105">
-                Coba Fitur Gratis
-              </button>
-              <button className="bg-[#F97316] hover:bg-[#EA580C] text-white px-8 py-4 rounded-2xl font-semibold transition-all duration-200 hover:shadow-lg hover:scale-105">
+              <a
+                href="https://drive.google.com/drive/folders/1bO5obr3gN2ZIR8GijurpmIX_6-j5Kj9d?usp=sharing"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="bg-[#2563EB] hover:bg-[#1D4ED8] text-white px-8 py-4 rounded-2xl font-semibold transition-all duration-200 hover:shadow-lg hover:scale-105"
+              >
+                Pakai Sekarang
+              </a>
+              <a
+                href="https://www.tiktok.com/@kasir.resto"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="bg-[#F97316] hover:bg-[#EA580C] text-white px-8 py-4 rounded-2xl font-semibold transition-all duration-200 hover:shadow-lg hover:scale-105"
+              >
                 Lihat Demo Lengkap
-              </button>
+              </a>
             </div>
           </div>
         </div>

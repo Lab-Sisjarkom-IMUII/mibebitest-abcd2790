@@ -128,7 +128,7 @@ export default function FinalCTA({ onCTAClick, onFormSubmit }) {
                   value={formData.name}
                   onChange={handleInputChange}
                   required
-                  className="w-full px-4 py-3 border border-[#E2E8F0] rounded-xl focus:ring-2 focus:ring-[#2563EB] focus:border-transparent"
+                  className="w-full px-4 py-3 border border-[#E2E8F0] rounded-xl focus:ring-2 focus:ring-[#2563EB] focus:border-transparent text-[#0F172A]"
                   placeholder="Masukkan nama lengkap"
                 />
               </div>
@@ -143,7 +143,7 @@ export default function FinalCTA({ onCTAClick, onFormSubmit }) {
                   value={formData.business}
                   onChange={handleInputChange}
                   required
-                  className="w-full px-4 py-3 border border-[#E2E8F0] rounded-xl focus:ring-2 focus:ring-[#2563EB] focus:border-transparent"
+                  className="w-full px-4 py-3 border border-[#E2E8F0] rounded-xl focus:ring-2 focus:ring-[#2563EB] focus:border-transparent text-[#0F172A]"
                   placeholder="Nama restoran atau bisnis Anda"
                 />
               </div>
@@ -158,7 +158,7 @@ export default function FinalCTA({ onCTAClick, onFormSubmit }) {
                   value={formData.phone}
                   onChange={handleInputChange}
                   required
-                  className="w-full px-4 py-3 border border-[#E2E8F0] rounded-xl focus:ring-2 focus:ring-[#2563EB] focus:border-transparent"
+                  className="w-full px-4 py-3 border border-[#E2E8F0] rounded-xl focus:ring-2 focus:ring-[#2563EB] focus:border-transparent text-[#0F172A]"
                   placeholder="08xxxxxxxxxx"
                 />
               </div>
@@ -172,7 +172,7 @@ export default function FinalCTA({ onCTAClick, onFormSubmit }) {
                   name="email"
                   value={formData.email}
                   onChange={handleInputChange}
-                  className="w-full px-4 py-3 border border-[#E2E8F0] rounded-xl focus:ring-2 focus:ring-[#2563EB] focus:border-transparent"
+                  className="w-full px-4 py-3 border border-[#E2E8F0] rounded-xl focus:ring-2 focus:ring-[#2563EB] focus:border-transparent text-[#0F172A]"
                   placeholder="email@example.com"
                 />
               </div>

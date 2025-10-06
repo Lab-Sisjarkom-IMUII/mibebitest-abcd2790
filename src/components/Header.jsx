@@ -65,8 +65,18 @@ export default function Header({ onCTAClick }) {
             </button>
           </nav>
 
-          {/* CTA Button */}
-          <div className="flex items-center space-x-4 flex-shrink-0">
+          {/* CTA Buttons */}
+          <div className="flex items-center space-x-3 flex-shrink-0">
+            <a
+              href="https://www.tiktok.com/@kasir.resto"
+              target="_blank"
+              rel="noopener noreferrer"
+              onClick={() => onCTAClick('header_demo')}
+              className="bg-[#F97316] hover:bg-[#EA580C] text-white px-3 sm:px-4 py-2.5 rounded-2xl font-semibold transition-all duration-300 hover:shadow-lg hover:scale-105 group relative overflow-hidden cursor-pointer text-sm sm:text-base whitespace-nowrap"
+            >
+              <span className="relative z-10">Lihat Demo</span>
+              <div className="absolute inset-0 bg-gradient-to-r from-[#EA580C] to-[#F97316] opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+            </a>
             <a
               href="https://drive.google.com/drive/folders/1bO5obr3gN2ZIR8GijurpmIX_6-j5Kj9d?usp=sharing"
               target="_blank"
