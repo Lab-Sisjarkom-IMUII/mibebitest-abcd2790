@@ -12,13 +12,13 @@ export default function manifest() {
     lang: 'id',
     icons: [
       {
-        src: '/icon-192.png',
+        src: '/LogoMibebi.png',
         sizes: '192x192',
         type: 'image/png',
         purpose: 'maskable any',
       },
       {
-        src: '/icon-512.png',
+        src: '/LogoMibebiWithText.png',
         sizes: '512x512',
         type: 'image/png',
         purpose: 'maskable any',

@@ -11,6 +11,7 @@ import Advantages from './Advantages';
 import Testimonials from './Testimonials';
 import Resources from './Resources';
 import FinalCTA from './FinalCTA';
+import FloatingCTA from './FloatingCTA';
 import Footer from './Footer';
 
 export default function LandingPage() {
@@ -78,6 +79,7 @@ export default function LandingPage() {
             <FinalCTA onCTAClick={handleCTAClick} onFormSubmit={handleFormSubmit} />
       </main>
       <Footer />
+      <FloatingCTA />
     </div>
   );
 }

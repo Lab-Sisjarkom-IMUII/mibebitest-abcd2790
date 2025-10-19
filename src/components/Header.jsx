@@ -4,6 +4,34 @@ import { useState, useEffect } from 'react';
 
 export default function Header({ onCTAClick }) {
   const [isScrolled, setIsScrolled] = useState(false);
+  const [colorIndex, setColorIndex] = useState(0);
+
+  const colorSchemes = [
+    {
+      demo: { 
+        bg: 'bg-[#FF0000]', 
+        hover: 'hover:bg-[#CC0000]', 
+        textColor: 'text-white'
+      },
+      cta: { 
+        bg: 'bg-[#000000]', 
+        hover: 'hover:bg-[#333333]', 
+        textColor: 'text-white'
+      }
+    },
+    {
+      demo: { 
+        bg: 'bg-[#0000FF]', 
+        hover: 'hover:bg-[#0000CC]', 
+        textColor: 'text-white'
+      },
+      cta: { 
+        bg: 'bg-[#FFFF00]', 
+        hover: 'hover:bg-[#CCCC00]', 
+        textColor: 'text-black'
+      }
+    }
+  ];
 
   useEffect(() => {
     const handleScroll = () => {
@@ -12,6 +40,15 @@ export default function Header({ onCTAClick }) {
 
     window.addEventListener('scroll', handleScroll);
     return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
+
+  useEffect(() => {
+    // Change colors every 1 second
+    const interval = setInterval(() => {
+      setColorIndex((prev) => (prev + 1) % colorSchemes.length);
+    }, 1000);
+
+    return () => clearInterval(interval);
   }, []);
 
   const scrollToSection = (sectionId) => {
@@ -29,17 +66,16 @@ export default function Header({ onCTAClick }) {
           : 'bg-transparent'
       }`}
     >
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full overflow-x-hidden">
-        <div className="flex items-center justify-between h-16 w-full">
+      <div className="max-w-7xl mx-auto px-3 sm:px-6 lg:px-8 w-full overflow-x-hidden">
+        <div className="flex items-center justify-between h-12 sm:h-16 w-full">
           {/* Logo */}
           <div className="flex-shrink-0">
             <div className="flex items-center">
-              <div className="w-8 h-8 bg-gradient-to-br from-[#2563EB] to-[#F97316] rounded-lg flex items-center justify-center">
-                <span className="text-white font-bold text-lg">M</span>
-              </div>
-              <span className="ml-2 text-xl font-bold text-[#0F172A]">
-                Mibebi
-              </span>
+              <img 
+                src="/LogoMibebiWithText.png" 
+                alt="Mibebi Logo" 
+                className="h-5 w-16 sm:h-6 sm:w-20 object-contain"
+              />
             </div>
           </div>
 
@@ -72,26 +108,26 @@ export default function Header({ onCTAClick }) {
                 </nav>
 
           {/* CTA Buttons */}
-          <div className="flex items-center space-x-3 flex-shrink-0">
+          <div className="flex items-center space-x-2 sm:space-x-3 flex-shrink-0">
             <a
               href="https://www.tiktok.com/@kasir.resto"
               target="_blank"
               rel="noopener noreferrer"
               onClick={() => onCTAClick('header_demo')}
-              className="bg-[#F97316] hover:bg-[#EA580C] text-white px-3 sm:px-4 py-2.5 rounded-2xl font-semibold transition-all duration-300 hover:shadow-lg hover:scale-105 group relative overflow-hidden cursor-pointer text-sm sm:text-base whitespace-nowrap"
+              className={`${colorSchemes[colorIndex].demo.bg} ${colorSchemes[colorIndex].demo.hover} ${colorSchemes[colorIndex].demo.textColor} px-2 sm:px-4 py-1.5 sm:py-2.5 rounded-xl sm:rounded-2xl font-semibold transition-all duration-500 hover:shadow-lg hover:scale-105 cursor-pointer text-xs sm:text-base whitespace-nowrap`}
             >
-              <span className="relative z-10">Lihat Demo</span>
-              <div className="absolute inset-0 bg-gradient-to-r from-[#EA580C] to-[#F97316] opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+              <span className="hidden sm:inline">Lihat Demo</span>
+              <span className="sm:hidden">Demo</span>
             </a>
             <a
               href="https://drive.google.com/drive/folders/1bO5obr3gN2ZIR8GijurpmIX_6-j5Kj9d?usp=sharing"
               target="_blank"
               rel="noopener noreferrer"
               onClick={() => onCTAClick('header_cta')}
-              className="bg-[#2563EB] hover:bg-[#1D4ED8] text-white px-3 sm:px-6 py-2.5 rounded-2xl font-semibold transition-all duration-300 hover:shadow-lg hover:scale-105 group relative overflow-hidden cursor-pointer text-sm sm:text-base whitespace-nowrap"
+              className={`${colorSchemes[colorIndex].cta.bg} ${colorSchemes[colorIndex].cta.hover} ${colorSchemes[colorIndex].cta.textColor} px-2 sm:px-6 py-1.5 sm:py-2.5 rounded-xl sm:rounded-2xl font-semibold transition-all duration-500 hover:shadow-lg hover:scale-105 cursor-pointer text-xs sm:text-base whitespace-nowrap`}
             >
-              <span className="relative z-10">Pakai Sekarang</span>
-              <div className="absolute inset-0 bg-gradient-to-r from-[#1D4ED8] to-[#2563EB] opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+              <span className="hidden sm:inline">Pakai Sekarang</span>
+              <span className="sm:hidden">Pakai Sekarang</span>
             </a>
           </div>
         </div>

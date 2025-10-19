@@ -110,65 +110,26 @@ export default function HeroSection({ onCTAClick }) {
                 {/* Header */}
                 <div className="flex items-center justify-between">
                   <div className="flex items-center space-x-3">
-                    <div className="w-8 h-8 bg-gradient-to-br from-[#2563EB] to-[#F97316] rounded-lg flex items-center justify-center">
-                      <span className="text-white font-bold">M</span>
-                    </div>
+                    <img 
+                      src="/LogoMibebi.png" 
+                      alt="Mibebi KasirResto Logo" 
+                      className="h-6 w-20 object-contain"
+                    />
                     <span className="font-semibold text-[#0F172A]">Mibebi KasirResto</span>
                   </div>
                   <div className="text-sm text-[#A3E635] font-semibold">● Online</div>
                 </div>
 
-                {/* Stats Cards */}
-                <div className="grid grid-cols-2 gap-4">
-                  <div className="bg-[#F8FAFC] rounded-xl p-4">
-                    <div className="text-2xl font-bold text-[#2563EB]">Rp 2.4M</div>
-                    <div className="text-sm text-[#334155]">Omzet Hari Ini</div>
-                  </div>
-                  <div className="bg-[#F8FAFC] rounded-xl p-4">
-                    <div className="text-2xl font-bold text-[#A3E635]">+25%</div>
-                    <div className="text-sm text-[#334155]">vs Kemarin</div>
-                  </div>
+                {/* QR Code Real Image */}
+                <div className="bg-white rounded-xl p-4 text-center border-2 border-[#E2E8F0]">
+                  <img 
+                    src="/qr.png" 
+                    alt="QR Code untuk pemesanan di meja" 
+                    className="w-full h-auto rounded-lg mx-auto mb-3"
+                  />
                 </div>
 
-                {/* QR Code Mockup */}
-                <div className="bg-gradient-to-br from-[#2563EB] to-[#3B82F6] rounded-xl p-6 text-white text-center">
-                  <div className="w-16 h-16 bg-white/20 rounded-lg mx-auto mb-3 flex items-center justify-center">
-                    <span className="text-2xl">📱</span>
-                  </div>
-                  <div className="text-sm font-medium">QR Meja & Self-Order</div>
-                  <div className="text-xs opacity-90">Pelanggan scan untuk pesan</div>
-                </div>
 
-                {/* Recent Orders */}
-                <div className="space-y-3">
-                  <div className="text-sm font-semibold text-[#0F172A]">Pesanan Terbaru</div>
-                  <div className="space-y-2">
-                    <div className="flex items-center justify-between p-3 bg-[#F8FAFC] rounded-lg">
-                      <div className="flex items-center space-x-3">
-                        <div className="w-8 h-8 bg-[#A3E635] rounded-full flex items-center justify-center">
-                          <span className="text-xs">✓</span>
-                        </div>
-                        <div>
-                          <div className="text-sm font-medium">Nasi Goreng Spesial</div>
-                          <div className="text-xs text-[#334155]">Meja 5 • QR Order</div>
-                        </div>
-                      </div>
-                      <div className="text-sm font-semibold text-[#2563EB]">Rp 25.000</div>
-                    </div>
-                    <div className="flex items-center justify-between p-3 bg-[#F8FAFC] rounded-lg">
-                      <div className="flex items-center space-x-3">
-                        <div className="w-8 h-8 bg-[#F97316] rounded-full flex items-center justify-center">
-                          <span className="text-xs">⏱</span>
-                        </div>
-                        <div>
-                          <div className="text-sm font-medium">Es Teh Manis</div>
-                          <div className="text-xs text-[#334155]">Meja 3 • WhatsApp</div>
-                        </div>
-                      </div>
-                      <div className="text-sm font-semibold text-[#2563EB]">Rp 8.000</div>
-                    </div>
-                  </div>
-                </div>
               </div>
             </div>
 

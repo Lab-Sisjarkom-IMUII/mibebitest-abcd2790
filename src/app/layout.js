@@ -16,11 +16,24 @@ export const metadata = {
   title: "Mibebi KasirResto — Kasir Digital yang Menambah Pemasukan Restoran",
   description: "Aplikasi kasir modern berbasis AI & QR yang membantu restoran mencatat penjualan, melayani pelanggan lebih cepat, dan bahkan menghasilkan pendapatan tambahan. Tanpa biaya bulanan, hanya bagi hasil.",
   keywords: "kasir digital, aplikasi kasir, restoran, QR code, AI, POS, sistem kasir, mibebi",
+  icons: {
+    icon: "/LogoMibebi.png",
+    shortcut: "/LogoMibebi.png",
+    apple: "/LogoMibebi.png",
+  },
   openGraph: {
     title: "Mibebi KasirResto — Kasir Digital yang Menambah Pemasukan Restoran",
     description: "Aplikasi kasir modern berbasis AI & QR yang membantu restoran mencatat penjualan, melayani pelanggan lebih cepat, dan bahkan menghasilkan pendapatan tambahan.",
     type: "website",
     locale: "id_ID",
+    images: [
+      {
+        url: "/LogoMibebi.png",
+        width: 1200,
+        height: 630,
+        alt: "Mibebi KasirResto Logo",
+      },
+    ],
   },
 };
 
