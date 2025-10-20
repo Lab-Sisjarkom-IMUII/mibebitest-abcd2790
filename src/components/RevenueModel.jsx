@@ -3,8 +3,8 @@
 import { useState, useEffect, useRef } from 'react';
 
 export default function RevenueModel() {
-  const [customers, setCustomers] = useState(2000);
-  const [avgOrder, setAvgOrder] = useState(25000);
+  const [customersPerDay, setCustomersPerDay] = useState(50);
+  const [adminFee, setAdminFee] = useState(1000);
   const [isVisible, setIsVisible] = useState(false);
   const sectionRef = useRef(null);
 
@@ -25,9 +25,11 @@ export default function RevenueModel() {
     return () => observer.disconnect();
   }, []);
 
-  const revenue = customers * avgOrder * 0.001; // Rp1.000 per customer
-  const restaurantShare = revenue * 0.5;
-  const mibebiShare = revenue * 0.5;
+  // Perhitungan pendapatan per bulan
+  const customersPerMonth = customersPerDay * 30;
+  const totalAdminFee = customersPerMonth * adminFee;
+  const restaurantShare = totalAdminFee * 0.5;
+  const mibebiShare = totalAdminFee * 0.5;
 
   return (
     <section ref={sectionRef} className="py-16 lg:py-20 bg-[#F8FAFC] overflow-hidden">
@@ -37,7 +39,7 @@ export default function RevenueModel() {
             Model Bagi Hasil (Revenue Sharing)
           </h2>
           <p className="text-lg text-[#334155] max-w-3xl mx-auto">
-            Tidak ada biaya bulanan. Setiap pelanggan hanya dikenakan Rp1.000, dibagi 50:50 antara restoran & Mibebi.
+            Tidak ada biaya bulanan. Setiap pelanggan dikenakan biaya admin yang dapat disesuaikan (Rp500 - Rp10.000), dibagi 50:50 antara restoran & Mibebi.
           </p>
         </div>
 
@@ -61,7 +63,7 @@ export default function RevenueModel() {
                   <div className="w-8 h-8 bg-[#A3E635] rounded-full flex items-center justify-center">
                     <span className="text-white text-sm">✓</span>
                   </div>
-                  <span className="text-[#334155]">Setiap pelanggan hanya dikenakan Rp1.000</span>
+                  <span className="text-[#334155]">Biaya admin dapat disesuaikan (Rp500 - Rp10.000)</span>
                 </div>
                 
                 <div className="flex items-center space-x-3">
@@ -92,37 +94,40 @@ export default function RevenueModel() {
               <div className="space-y-4">
                 <div>
                   <label className="block text-sm font-semibold text-[#0F172A] mb-2">
-                    Jumlah Pelanggan per Bulan
+                    Jumlah Pelanggan per Hari
                   </label>
                   <input
                     type="range"
-                    min="500"
-                    max="5000"
-                    step="100"
-                    value={customers}
-                    onChange={(e) => setCustomers(parseInt(e.target.value))}
+                    min="10"
+                    max="200"
+                    step="5"
+                    value={customersPerDay}
+                    onChange={(e) => setCustomersPerDay(parseInt(e.target.value))}
                     className="w-full h-2 bg-[#E2E8F0] rounded-lg appearance-none cursor-pointer"
                   />
                   <div className="text-center text-lg font-bold text-[#2563EB] mt-2">
-                    {customers.toLocaleString('id-ID')} pelanggan
+                    {customersPerDay} pelanggan/hari
+                  </div>
+                  <div className="text-center text-sm text-[#64748B] mt-1">
+                    ({customersPerMonth.toLocaleString('id-ID')} pelanggan/bulan)
                   </div>
                 </div>
 
                 <div>
                   <label className="block text-sm font-semibold text-[#0F172A] mb-2">
-                    Rata-rata Order per Pelanggan
+                    Biaya Admin per Pelanggan
                   </label>
                   <input
                     type="range"
-                    min="15000"
-                    max="50000"
-                    step="5000"
-                    value={avgOrder}
-                    onChange={(e) => setAvgOrder(parseInt(e.target.value))}
+                    min="500"
+                    max="10000"
+                    step="500"
+                    value={adminFee}
+                    onChange={(e) => setAdminFee(parseInt(e.target.value))}
                     className="w-full h-2 bg-[#E2E8F0] rounded-lg appearance-none cursor-pointer"
                   />
                   <div className="text-center text-lg font-bold text-[#2563EB] mt-2">
-                    Rp {avgOrder.toLocaleString('id-ID')}
+                    Rp {adminFee.toLocaleString('id-ID')}
                   </div>
                 </div>
               </div>
@@ -130,9 +135,12 @@ export default function RevenueModel() {
               {/* Results */}
               <div className="space-y-4">
                 <div className="bg-[#F8FAFC] rounded-xl p-4">
-                  <div className="text-sm text-[#334155] mb-1">Total Biaya Layanan</div>
+                  <div className="text-sm text-[#334155] mb-1">Total Biaya Admin per Bulan</div>
                   <div className="text-2xl font-bold text-[#0F172A]">
-                    Rp {revenue.toLocaleString('id-ID')}
+                    Rp {totalAdminFee.toLocaleString('id-ID')}
+                  </div>
+                  <div className="text-xs text-[#64748B] mt-1">
+                    ({customersPerMonth.toLocaleString('id-ID')} pelanggan × Rp {adminFee.toLocaleString('id-ID')})
                   </div>
                 </div>
 
@@ -142,6 +150,7 @@ export default function RevenueModel() {
                     <div className="text-xl font-bold">
                       Rp {restaurantShare.toLocaleString('id-ID')}
                     </div>
+                    <div className="text-xs opacity-90 mt-1">50% dari total</div>
                   </div>
                   
                   <div className="bg-gradient-to-r from-[#2563EB] to-[#3B82F6] rounded-xl p-4 text-white text-center">
@@ -149,6 +158,7 @@ export default function RevenueModel() {
                     <div className="text-xl font-bold">
                       Rp {mibebiShare.toLocaleString('id-ID')}
                     </div>
+                    <div className="text-xs opacity-90 mt-1">50% dari total</div>
                   </div>
                 </div>
               </div>
@@ -158,6 +168,9 @@ export default function RevenueModel() {
                 <div className="text-sm font-semibold mb-1">🎉 Pendapatan Ekstra untuk Restoran</div>
                 <div className="text-lg font-bold">
                   Rp {restaurantShare.toLocaleString('id-ID')} per bulan
+                </div>
+                <div className="text-xs opacity-90 mt-1">
+                  Dari {customersPerDay} pelanggan/hari dengan biaya admin Rp {adminFee.toLocaleString('id-ID')}
                 </div>
               </div>
             </div>
