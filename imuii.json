@@ -1,0 +1,11 @@
+{
+  "name": "mibebi-landingpage",
+  "framework": "nextjs",
+  "language": "javascript",
+  "buildCommand": "npm install && npm run build",
+  "startCommand": "npm start",
+  "domain": "mibebitest",
+  "email": "d.raihan2004@gmail.com",
+  "secretKey": "imuii_5e31e251811a3900aedf13440856ce98b094af852f1349adb462e22a5568e13d",
+  "repoUrl": "https://github.com/Lab-Sisjarkom-IMUII/mibebitest-abcd2790.git"
+}
